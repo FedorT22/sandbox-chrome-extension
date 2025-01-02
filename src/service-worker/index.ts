@@ -12,3 +12,7 @@ function produceSentryErrorFromServiceWorker(): void {
 }
 
 produceSentryErrorFromServiceWorker();
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
+});

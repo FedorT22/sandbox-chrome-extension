@@ -64,6 +64,9 @@ export default defineConfig(({ mode }) => {
             transform(content) {
               return content
                 .toString()
+                .replace(/\$APP_NAME/g, appName)
+                .replace(/\$APP_VERSION/g, appVersion)
+                .replace(/\$APP_DESCRIPTION/g, packageJson.description)
                 .replace(
                   /\$GOOGLE_OAUTH_CLIENT_ID/g,
                   String(env.GOOGLE_OAUTH_CLIENT_ID)
