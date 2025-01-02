@@ -7,6 +7,12 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
 
+  function produceUncaughtSentryErrorFromSidePanel(): void {
+    throw new Error(
+      "❌ Sentry Uncaught Error in produceUncaughtSentryErrorFromSidePanel"
+    );
+  }
+
   function produceSentryErrorFromSidePanel(): void {
     try {
       console.error("❌ Sentry Error in produceSentryErrorFromSidePanel");
@@ -34,6 +40,10 @@ function App() {
 
         <button onClick={produceSentryErrorFromSidePanel}>
           Produce sentry error from sidePanel
+        </button>
+
+        <button onClick={produceUncaughtSentryErrorFromSidePanel}>
+          Produce uncaught sentry error from sidePanel
         </button>
       </div>
     </>
