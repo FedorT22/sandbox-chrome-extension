@@ -1,7 +1,7 @@
 {
   "name": "sandbox-chrome-ext",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Sandbox project for testing chrome-extension integration with @sentry",
   "type": "module",
   "scripts": {
