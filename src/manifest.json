@@ -35,8 +35,6 @@
     ]
   },
   "permissions": [
-    "identity",
-    "identity.email",
     "sidePanel"
   ]
 }
