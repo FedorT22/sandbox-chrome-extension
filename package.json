@@ -1,0 +1,43 @@
+{
+  "name": "sandbox-chrome-ext",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Sandbox project for testing chrome-extension integration with @sentry",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "lint": "eslint .",
+    "cleanup:build": "rimraf dist/*",
+    "build:development:service-worker": "NODE_ENV=development vite build --mode=development --config infrastructure/vite.service-worker.config.ts",
+    "build:development:side-panel": "NODE_ENV=development vite build --mode=development --config infrastructure/vite.side-panel.config.ts",
+    "compose-build:development": "npm run cleanup:build && npm-run-all build:development:*",
+    "build:production:service-worker": "NODE_ENV=production vite build --mode=production --config infrastructure/vite.service-worker.config.ts",
+    "build:production:side-panel": "NODE_ENV=production vite build --mode=production --config infrastructure/vite.side-panel.config.ts",
+    "compose-build:production": "npm run cleanup:build && npm-run-all build:production:*"
+  },
+  "dependencies": {
+    "@sentry/browser": "^8.47.0",
+    "@sentry/react": "^8.47.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@sentry/cli": "^2.40.0",
+    "@sentry/vite-plugin": "^2.22.7",
+    "@types/node": "^22.10.3",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.18.2",
+    "vite": "^6.0.5"
+  }
+}
