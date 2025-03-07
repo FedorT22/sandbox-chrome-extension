@@ -16,15 +16,15 @@
     "compose-build:production": "npm run cleanup:build && npm-run-all build:production:*"
   },
   "dependencies": {
-    "@sentry/browser": "^8.47.0",
-    "@sentry/react": "^8.47.0",
+    "@sentry/browser": "^9.5.0",
+    "@sentry/react": "^9.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
-    "@sentry/cli": "^2.40.0",
-    "@sentry/vite-plugin": "^2.22.7",
+    "@sentry/cli": "^2.42.2",
+    "@sentry/vite-plugin": "^3.2.2",
     "@types/chrome": "^0.0.287",
     "@types/node": "^22.10.3",
     "@types/react": "^18.3.18",
