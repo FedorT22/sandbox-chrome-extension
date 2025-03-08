@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { captureException } from "@sentry/react";
-// import { feedbackIntegration } from "@sentry/react";
-import { feedbackIntegration } from "@sentry/browser";
+import { feedbackIntegration } from "@sentry/react";
+// import { feedbackIntegration } from "@sentry/browser";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
