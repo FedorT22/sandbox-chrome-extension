@@ -87,11 +87,6 @@ export default defineConfig(({ mode }) => {
           //       .replace(/https:\/\/browser\.sentry-cdn\.com/g, '');
           //   },
           // },
-          /**
-           * Our plugin is blocked due to sentry lazy-load mechanism, which includes links to cdn.
-           * Therefore we need to remove the CDN URL from the sourcemap at least until sentry fixes the issue.
-           * {@link}[https://github.com/getsentry/sentry-javascript/issues/14010]
-           */
           // {
           //   src: resolve(PATHS.dist, 'sidePanel.js.map'),
           //   dest: PATHS.dist,
@@ -99,6 +94,18 @@ export default defineConfig(({ mode }) => {
           //     return content
           //       .toString()
           //       .replace(/https:\/\/browser\.sentry-cdn\.com/g, '');
+          //   },
+          // },
+          // {
+          //   src: resolve(PATHS.dist, "sidePanel.js"),
+          //   dest: PATHS.dist,
+          //   transform(content) {
+          //     return content
+          //       .toString()
+          //       .replace(
+          //         /const \w=me\.document\.createElement\("script"\);\w\.async=!0,\w\.crossOrigin="anonymous",\w\.src=\w0\(\w,\w\),\w\.onLoad&&\(\w\.onload=\w\.onLoad\);/g,
+          //         ""
+          //       );
           //   },
           // },
         ],
